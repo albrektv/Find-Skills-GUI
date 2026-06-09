@@ -56,7 +56,7 @@ Instead of typing commands in the terminal, you can:
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/find-skills.git
+git clone https://github.com/albrektv/find-skills.git
 cd find-skills
 npm install
 npm run dev
@@ -122,7 +122,7 @@ find-skills/
 
 ## License
 
-MIT — add a `LICENSE` file before publishing if you have not already.
+MIT
 
 ---
 

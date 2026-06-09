@@ -2,6 +2,7 @@
   "name": "find-skills",
   "version": "1.0.0",
   "description": "Desktop GUI for the open agent skills ecosystem",
+  "license": "MIT",
   "main": "./out/main/index.js",
   "type": "module",
   "scripts": {
