@@ -22,6 +22,11 @@
 
 ---
 
+<p align="center">
+  <img src="Res/2026-06-09_09-53-31.png" alt="Find Skills — light theme" width="49%" />
+  <img src="Res/2026-06-09_09-54-57.png" alt="Find Skills — dark theme" width="49%" />
+</p>
+
 ## About
 
 **Find Skills** is a desktop app that wraps the official [`skills`](https://www.npmjs.com/package/skills) CLI with a modern UI. It connects to the [skills.sh](https://skills.sh) registry so you can browse, install, and manage agent skills for tools like Cursor and other AI agents.
