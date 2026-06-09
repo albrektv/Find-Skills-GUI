@@ -64,7 +64,7 @@ Instead of typing commands in the terminal, you can:
 ## Quick start
 
 ```bash
-git clone https://github.com/albrektv/find-skills.git
+git clone https://github.com/albrektv/Find-Skills-GUI.git
 cd find-skills
 npm install
 npm run dev
