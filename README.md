@@ -18,6 +18,9 @@
   <img src="https://img.shields.io/badge/react-19-61DAFB?logo=react&logoColor=black" alt="React 19" />
   <img src="https://img.shields.io/badge/typescript-5.8-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS-lightgrey" alt="Windows | macOS" />
+  <a href="https://github.com/albrektv/Find-Skills-GUI/releases/tag/v1.0.0">
+    <img src="https://img.shields.io/badge/download-v1.0.0-007ACC?logo=github&logoColor=white" alt="Download v1.0.0" />
+  </a>
 </p>
 
 ---
