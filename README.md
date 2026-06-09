@@ -65,7 +65,7 @@ Instead of typing commands in the terminal, you can:
 
 ```bash
 git clone https://github.com/albrektv/Find-Skills-GUI.git
-cd find-skills
+cd Find-Skills-GUI
 npm install
 npm run dev
 ```
