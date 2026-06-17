@@ -64,10 +64,12 @@ export function InstallDialog({
     loading || !source.trim() || (!global && !installProjectDir.trim())
 
   const handleInstall = async (): Promise<void> => {
-    if (!source.trim()) return
+    if (!source.trim() || loading) return
     setLoading(true)
+
     const jobId = crypto.randomUUID()
     startJob(jobId)
+    onClose()
 
     const skills = skillsInput
       .split(',')
@@ -76,6 +78,7 @@ export function InstallDialog({
 
     try {
       const result = await ipc.add({
+        jobId,
         source: source.trim(),
         skills: installAll ? ['*'] : skills.length ? skills : undefined,
         agents: agents.length ? agents : undefined,
@@ -88,7 +91,6 @@ export function InstallDialog({
       finishJob(jobId, result)
       if (result.success) {
         onSuccess?.()
-        onClose()
       }
     } catch (error) {
       finishJob(jobId, {
@@ -97,8 +99,6 @@ export function InstallDialog({
         stderr: error instanceof Error ? error.message : 'Install failed',
         exitCode: 1
       })
-    } finally {
-      setLoading(false)
     }
   }
 

@@ -40,7 +40,12 @@ export interface CliJobResult {
   exitCode: number | null
 }
 
-export interface AddOptions {
+export interface CliJobOptions {
+  jobId?: string
+  cwd?: string
+}
+
+export interface AddOptions extends CliJobOptions {
   source: string
   skills?: string[]
   agents?: string[]
@@ -49,40 +54,34 @@ export interface AddOptions {
   all?: boolean
   fullDepth?: boolean
   list?: boolean
-  cwd?: string
 }
 
-export interface RemoveOptions {
+export interface RemoveOptions extends CliJobOptions {
   skills?: string[]
   agents?: string[]
   global?: boolean
   all?: boolean
-  cwd?: string
 }
 
-export interface UpdateOptions {
+export interface UpdateOptions extends CliJobOptions {
   skills?: string[]
   global?: boolean
   project?: boolean
-  cwd?: string
 }
 
-export interface UseOptions {
+export interface UseOptions extends CliJobOptions {
   source: string
   skill?: string
   agent?: string
-  cwd?: string
 }
 
-export interface InitOptions {
+export interface InitOptions extends CliJobOptions {
   name?: string
-  cwd?: string
 }
 
-export interface ListOptions {
+export interface ListOptions extends CliJobOptions {
   global?: boolean
   agents?: string[]
-  cwd?: string
 }
 
 export interface JobStreamEvent {

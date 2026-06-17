@@ -116,5 +116,9 @@
     "copied": "Copied!",
     "console": "Console",
     "clear": "Clear"
+  },
+  "window": {
+    "minimize": "Minimize",
+    "close": "Close"
   }
 }

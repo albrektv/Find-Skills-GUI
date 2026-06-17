@@ -13,5 +13,7 @@ export const IPC_CHANNELS = {
   SET_THEME: 'skills:set-theme',
   GET_PLATFORM: 'skills:get-platform',
   FETCH_SKILL_DETAIL: 'skills:fetch-skill-detail',
-  JOB_STREAM: 'skills:job-stream'
+  JOB_STREAM: 'skills:job-stream',
+  WINDOW_MINIMIZE: 'skills:window-minimize',
+  WINDOW_CLOSE: 'skills:window-close'
 } as const

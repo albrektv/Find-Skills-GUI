@@ -35,11 +35,8 @@ function createWindow(): void {
     ...(customTitleBar
       ? {
           titleBarStyle: 'hidden' as const,
-          titleBarOverlay: {
-            color: chrome.overlay,
-            symbolColor: chrome.symbol,
-            height: 40
-          }
+          transparent: true,
+          backgroundColor: '#00000000'
         }
       : {}),
     webPreferences: {

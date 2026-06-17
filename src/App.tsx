@@ -74,6 +74,15 @@ function AppContent(): React.ReactNode {
   useEffect(() => {
     prefetchPage('discover')
   }, [])
+
+  useEffect(() => {
+    ipc.getPlatform().then((platform) => {
+      document.documentElement.setAttribute('data-platform', platform)
+      if (platform === 'win32' || platform === 'linux') {
+        document.documentElement.setAttribute('data-window-shell', 'rounded')
+      }
+    }).catch(() => {})
+  }, [])
   const { theme, installInternalSkills, disableTelemetry } = useSettingsStore()
   const { dir } = useI18n()
   const { appendLine, finishJob } = useJobStore()

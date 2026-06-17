@@ -27,6 +27,7 @@ export function UsePage(): React.ReactNode {
 
     try {
       const result = await ipc.use({
+        jobId,
         source: source.trim(),
         skill: skill.trim() || undefined,
         agent: agent || undefined,

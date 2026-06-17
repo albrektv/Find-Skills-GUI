@@ -1,5 +1,6 @@
 import { useI18n } from '@/i18n/I18nProvider'
 import { AppIcon } from '@/components/AppIcon'
+import { WindowControls } from '@/components/WindowControls'
 
 function supportsCustomTitleBar(): boolean {
   if (typeof window === 'undefined') return false
@@ -14,7 +15,7 @@ export function WindowTitleBar(): React.ReactNode {
 
   return (
     <header className="ds-windows-titlebar shrink-0">
-      <div className="ds-windows-titlebar-content">
+      <div className="ds-windows-titlebar-sidebar-zone">
         <div className="ds-windows-titlebar-brand">
           <div className="ds-windows-titlebar-icon overflow-hidden">
             <AppIcon size="xs" className="shadow-none" />
@@ -22,6 +23,8 @@ export function WindowTitleBar(): React.ReactNode {
           <span className="ds-windows-titlebar-title">{t('app.title')}</span>
         </div>
       </div>
+      <div className="ds-windows-titlebar-main-zone" aria-hidden="true" />
+      <WindowControls />
     </header>
   )
 }

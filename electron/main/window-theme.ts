@@ -3,14 +3,10 @@ import type { Theme } from '../../src/types/skills'
 
 const WINDOW_CHROME = {
   light: {
-    background: '#f5f7fa',
-    overlay: '#f5f7fa',
-    symbol: '#222222'
+    background: '#f5f7fa'
   },
   dark: {
-    background: '#101010',
-    overlay: '#101010',
-    symbol: '#ffffff'
+    background: '#101010'
   }
 } as const
 
@@ -41,15 +37,8 @@ export function applyWindowChrome(mode: ResolvedWindowTheme): void {
 
   if (!window || window.isDestroyed()) return
 
-  window.setBackgroundColor(chrome.background)
-
-  if (process.platform === 'win32') {
-    window.setTitleBarOverlay({
-      color: chrome.overlay,
-      symbolColor: chrome.symbol,
-      height: 40
-    })
-  }
+  const transparentShell = usesCustomTitleBar()
+  window.setBackgroundColor(transparentShell ? '#00000000' : chrome.background)
 }
 
 export function registerNativeThemeListener(): void {

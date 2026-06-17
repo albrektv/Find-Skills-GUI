@@ -32,6 +32,7 @@ export function CreatePage(): React.ReactNode {
 
     try {
       const result = await ipc.init({
+        jobId,
         name: name.trim() || undefined,
         cwd: folder || projectDir || undefined
       })

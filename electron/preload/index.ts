@@ -61,6 +61,10 @@ const skillsApi = {
 
   getPlatform: (): Promise<NodeJS.Platform> => ipcRenderer.invoke(IPC_CHANNELS.GET_PLATFORM),
 
+  minimizeWindow: (): Promise<void> => ipcRenderer.invoke(IPC_CHANNELS.WINDOW_MINIMIZE),
+
+  closeWindow: (): Promise<void> => ipcRenderer.invoke(IPC_CHANNELS.WINDOW_CLOSE),
+
   onJobStream: (callback: (event: JobStreamEvent) => void): (() => void) => {
     const handler = (_: Electron.IpcRendererEvent, event: JobStreamEvent): void => {
       callback(event)

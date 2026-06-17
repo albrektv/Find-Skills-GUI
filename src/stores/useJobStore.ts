@@ -43,15 +43,19 @@ export const useJobStore = create<JobState>((set, get) => ({
   },
 
   finishJob: (jobId, result) => {
-    const jobs = get().jobs.map((job) =>
-      job.id === jobId
-        ? {
-            ...job,
-            status: result.success ? ('success' as const) : ('error' as const),
-            result
-          }
-        : job
-    )
+    const jobs = get().jobs.map((job) => {
+      if (job.id !== jobId) return job
+      const lines =
+        job.lines.length > 0
+          ? job.lines
+          : [result.stdout, result.stderr].filter(Boolean)
+      return {
+        ...job,
+        lines,
+        status: result.success ? ('success' as const) : ('error' as const),
+        result
+      }
+    })
     set({ jobs, activeJobId: null })
   },
 

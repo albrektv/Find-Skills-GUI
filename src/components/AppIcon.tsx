@@ -9,9 +9,9 @@ interface AppIconProps {
 }
 
 const sizeClasses = {
-  xs: 'w-7 h-7 rounded-lg',
-  sm: 'w-8 h-8 rounded-xl',
-  md: 'w-11 h-11 rounded-2xl'
+  xs: 'w-7 h-7 rounded-[var(--app-radius-sm)]',
+  sm: 'w-8 h-8 rounded-[var(--app-radius-md)]',
+  md: 'w-11 h-11 rounded-[var(--app-radius-xl)]'
 } as const
 
 export function AppIcon({

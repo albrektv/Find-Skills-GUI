@@ -92,4 +92,12 @@ export function registerIpcHandlers(): void {
   ipcMain.handle(IPC_CHANNELS.GET_PLATFORM, async () => {
     return process.platform
   })
+
+  ipcMain.handle(IPC_CHANNELS.WINDOW_MINIMIZE, async () => {
+    mainWindow?.minimize()
+  })
+
+  ipcMain.handle(IPC_CHANNELS.WINDOW_CLOSE, async () => {
+    mainWindow?.close()
+  })
 }

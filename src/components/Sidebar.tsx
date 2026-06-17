@@ -46,7 +46,7 @@ export function Sidebar({ activePage, onNavigate }: SidebarProps): React.ReactNo
               onMouseEnter={() => prefetchPage(id)}
               onFocus={() => prefetchPage(id)}
               className={clsx(
-                'w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all',
+                'w-full flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-sm font-medium transition-all',
                 active
                   ? 'bg-[var(--ds-sidebar-row-active)] text-accent ring-1 ring-[var(--ds-sidebar-row-ring)]'
                   : 'text-text-secondary hover:bg-[var(--ds-sidebar-row-hover)] hover:text-text-primary'

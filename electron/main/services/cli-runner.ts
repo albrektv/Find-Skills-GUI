@@ -131,7 +131,7 @@ export async function addSkill(
 
   if (!options.list) args.push('-y')
 
-  return runSkillsCli(args, { cwd: options.cwd, window, jobId: crypto.randomUUID() })
+  return runSkillsCli(args, { cwd: options.cwd, window, jobId: options.jobId })
 }
 
 export async function removeSkills(
@@ -148,7 +148,7 @@ export async function removeSkills(
 
   args.push('-y')
 
-  return runSkillsCli(args, { cwd: options.cwd, window, jobId: crypto.randomUUID() })
+  return runSkillsCli(args, { cwd: options.cwd, window, jobId: options.jobId })
 }
 
 export async function updateSkills(
@@ -163,7 +163,7 @@ export async function updateSkills(
 
   args.push('-y')
 
-  return runSkillsCli(args, { cwd: options.cwd, window, jobId: crypto.randomUUID() })
+  return runSkillsCli(args, { cwd: options.cwd, window, jobId: options.jobId })
 }
 
 export async function useSkill(
@@ -177,7 +177,7 @@ export async function useSkill(
     args.push('--agent', options.agent)
   }
 
-  return runSkillsCli(args, { cwd: options.cwd, window, jobId: crypto.randomUUID() })
+  return runSkillsCli(args, { cwd: options.cwd, window, jobId: options.jobId })
 }
 
 export async function initSkill(
@@ -186,7 +186,7 @@ export async function initSkill(
 ): Promise<CliJobResult> {
   const args = ['init']
   if (options.name) args.push(options.name)
-  return runSkillsCli(args, { cwd: options.cwd, window, jobId: crypto.randomUUID() })
+  return runSkillsCli(args, { cwd: options.cwd, window, jobId: options.jobId })
 }
 
 export async function listSkills(
@@ -197,7 +197,7 @@ export async function listSkills(
   if (options.global) args.push('--global')
   appendMultiFlag(args, '--agent', options.agents)
 
-  const result = await runSkillsCli(args, { cwd: options.cwd, window, jobId: crypto.randomUUID() })
+  const result = await runSkillsCli(args, { cwd: options.cwd, window, jobId: options.jobId })
   const skills = parseInstalledSkills(result.stdout, options.global ? 'global' : 'project')
 
   return { result, skills }

@@ -47,6 +47,7 @@ export function InstalledPage(): React.ReactNode {
 
     try {
       const result = await ipc.remove({
+        jobId,
         skills: Array.from(selected),
         cwd: projectDir || undefined
       })

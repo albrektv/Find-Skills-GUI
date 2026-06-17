@@ -66,6 +66,10 @@ export const ipc = {
   getPlatform: (): Promise<NodeJS.Platform> =>
     getApi()?.getPlatform() ?? Promise.resolve('darwin' as NodeJS.Platform),
 
+  minimizeWindow: (): Promise<void> => getApi()?.minimizeWindow() ?? Promise.resolve(),
+
+  closeWindow: (): Promise<void> => getApi()?.closeWindow() ?? Promise.resolve(),
+
   onJobStream: (callback: (event: JobStreamEvent) => void): (() => void) =>
     getApi()?.onJobStream(callback) ?? (() => {})
 }

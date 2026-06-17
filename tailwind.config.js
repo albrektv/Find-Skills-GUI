@@ -70,9 +70,10 @@ export default {
         composer: 'var(--ds-shadow-composer)'
       },
       borderRadius: {
-        xl: '14px',
-        '2xl': '18px',
-        '3xl': '22px'
+        lg: 'var(--app-radius-md)',
+        xl: 'var(--app-radius-lg)',
+        '2xl': 'var(--app-radius-xl)',
+        '3xl': 'var(--app-radius-2xl)'
       }
     }
   },
